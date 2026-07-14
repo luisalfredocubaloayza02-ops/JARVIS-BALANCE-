@@ -1,25 +1,228 @@
 {
-  "bbva": {
-    "limite_mensual": 865.00,
-    "disponible": 865.00,
-    "gastado": 0.00,
-    "categorias": {
-      "alimentacion": 0.00,
-      "ocio": 0.00,
-      "fijos": 0.00
+  "app": {
+    "name": "JARVIS BALANCE",
+    "version": "1.0.0",
+    "currency": "EUR",
+    "locale": "es-ES",
+    "timezone": "Europe/Madrid",
+    "last_update": null
+  },
+  "theme": {
+    "name": "JARVIS DARK BLUE",
+    "mode": "dark",
+    "colors": {
+      "background": "#020611",
+      "surface": "#07111F",
+      "surface_alt": "#0B1B2E",
+      "primary": "#00AEEF",
+      "primary_soft": "#68D5FF",
+      "text": "#FFFFFF",
+      "text_secondary": "#A9C7D9",
+      "border": "#12344D",
+      "danger": "#FF4D6D",
+      "success": "#35D07F"
+    },
+    "visual_style": {
+      "inspiration": "JARVIS / futuristic HUD",
+      "glow": true,
+      "glass_effect": true,
+      "rounded_cards": true,
+      "high_contrast": true
     }
   },
-  "santander": {
-    "recibos": [
-      {"id": "alquiler", "nombre": "Alquiler / Renta", "precio": 450.00, "pagado": false},
-      {"id": "internet", "nombre": "Teléfono e Internet", "precio": 35.00, "pagado": false},
-      {"id": "luz", "nombre": "Luz (Mensual)", "precio": 0.00, "pagado": false, "variable": true},
-      {"id": "agua", "nombre": "Agua (Trimestral)", "precio": 0.00, "pagado": false, "variable": true}
+  "dashboard": {
+    "period": {
+      "type": "monthly",
+      "month": null,
+      "year": null
+    },
+    "summary": {
+      "total_available": 0.0,
+      "total_spent": 0.0,
+      "total_income": 0.0,
+      "savings_progress_percent": 0.0
+    },
+    "widgets": [
+      "bbva_overview",
+      "santander_fixed_costs",
+      "savings_goal",
+      "spending_categories",
+      "recent_transactions",
+      "shopping_list"
     ]
   },
-  "ahorros": {
-    "total_acumulado": 0.00,
-    "meta_septiembre": 1500.00
+  "accounts": {
+    "bbva": {
+      "id": "acc_bbva_main",
+      "name": "BBVA",
+      "role": "daily_spending",
+      "active": true,
+      "balance": 865.0,
+      "monthly_budget": 865.0,
+      "spent": 0.0,
+      "available": 865.0,
+      "budget_usage_percent": 0.0,
+      "categories": {
+        "alimentacion": {
+          "label": "Alimentación",
+          "budget": 250.0,
+          "spent": 0.0,
+          "available": 250.0,
+          "icon": "fork.knife"
+        },
+        "transporte": {
+          "label": "Transporte",
+          "budget": 100.0,
+          "spent": 0.0,
+          "available": 100.0,
+          "icon": "car.fill"
+        },
+        "ocio": {
+          "label": "Ocio",
+          "budget": 120.0,
+          "spent": 0.0,
+          "available": 120.0,
+          "icon": "gamecontroller.fill"
+        },
+        "compras": {
+          "label": "Compras",
+          "budget": 150.0,
+          "spent": 0.0,
+          "available": 150.0,
+          "icon": "bag.fill"
+        },
+        "salud": {
+          "label": "Salud",
+          "budget": 75.0,
+          "spent": 0.0,
+          "available": 75.0,
+          "icon": "cross.case.fill"
+        },
+        "otros": {
+          "label": "Otros",
+          "budget": 170.0,
+          "spent": 0.0,
+          "available": 170.0,
+          "icon": "ellipsis.circle.fill"
+        }
+      }
+    },
+    "santander": {
+      "id": "acc_santander_fixed",
+      "name": "Santander",
+      "role": "fixed_expenses",
+      "active": true,
+      "balance": 0.0,
+      "monthly_fixed_budget": 0.0,
+      "paid_total": 0.0,
+      "pending_total": 0.0,
+      "bills": {
+        "alquiler": {
+          "label": "Alquiler",
+          "amount": 450.0,
+          "due_day": 1,
+          "paid": false,
+          "paid_at": null,
+          "icon": "house.fill"
+        },
+        "internet": {
+          "label": "Internet",
+          "amount": 0.0,
+          "due_day": null,
+          "paid": false,
+          "paid_at": null,
+          "icon": "wifi"
+        },
+        "luz": {
+          "label": "Luz",
+          "amount": 0.0,
+          "due_day": null,
+          "paid": false,
+          "paid_at": null,
+          "icon": "bolt.fill"
+        },
+        "agua": {
+          "label": "Agua",
+          "amount": 0.0,
+          "due_day": null,
+          "paid": false,
+          "paid_at": null,
+          "icon": "drop.fill"
+        }
+      }
+    }
   },
-  "historial": []
+  "savings": {
+    "id": "savings_main",
+    "name": "Meta de ahorro",
+    "current": 0.0,
+    "target": 1300.0,
+    "deadline": "2026-09-01",
+    "remaining": 1300.0,
+    "progress_percent": 0.0,
+    "monthly_required": 0.0,
+    "status": "in_progress"
+  },
+  "shopping_list": {
+    "active": true,
+    "estimated_total": 0.0,
+    "items": []
+  },
+  "transactions": [],
+  "automation": {
+    "apple_pay": {
+      "enabled": false,
+      "shortcut_name": "JARVIS REGISTRAR GASTO",
+      "default_account": "bbva",
+      "ask_for_amount": true,
+      "ask_for_category": true,
+      "ask_for_note": false
+    },
+    "rules": [
+      {
+        "merchant_contains": [
+          "mercadona",
+          "carrefour",
+          "lidl",
+          "aldi"
+        ],
+        "category": "alimentacion"
+      },
+      {
+        "merchant_contains": [
+          "uber",
+          "cabify",
+          "renfe",
+          "metro",
+          "repsol"
+        ],
+        "category": "transporte"
+      },
+      {
+        "merchant_contains": [
+          "zara",
+          "h&m",
+          "nike",
+          "adidas"
+        ],
+        "category": "compras"
+      }
+    ]
+  },
+  "alerts": {
+    "budget_warning_percent": 80,
+    "budget_critical_percent": 95,
+    "savings_reminder_enabled": true,
+    "fixed_bill_reminder_enabled": true
+  },
+  "system": {
+    "schema_version": 1,
+    "created_at": "2026-07-14T00:00:00+02:00",
+    "updated_at": "2026-07-14T00:00:00+02:00",
+    "data_integrity": {
+      "last_transaction_id": 0,
+      "last_sync_status": "not_synced",
+      "last_sync_message": null
+    }
+  }
 }
