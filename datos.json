@@ -1,228 +1,450 @@
 {
-  "app": {
+  "meta": {
     "name": "JARVIS BALANCE",
-    "version": "1.0.0",
+    "version": "2.0.0",
+    "description": "Sistema personal de control financiero, presupuestos, facturas, ahorro y automatizaciones.",
     "currency": "EUR",
     "locale": "es-ES",
-    "timezone": "Europe/Madrid",
-    "last_update": null
+    "timezone": "Europe/Madrid"
   },
-  "theme": {
-    "name": "JARVIS DARK BLUE",
-    "mode": "dark",
-    "colors": {
-      "background": "#020611",
-      "surface": "#07111F",
-      "surface_alt": "#0B1B2E",
-      "primary": "#00AEEF",
-      "primary_soft": "#68D5FF",
-      "text": "#FFFFFF",
-      "text_secondary": "#A9C7D9",
-      "border": "#12344D",
-      "danger": "#FF4D6D",
-      "success": "#35D07F"
-    },
-    "visual_style": {
-      "inspiration": "JARVIS / futuristic HUD",
-      "glow": true,
-      "glass_effect": true,
-      "rounded_cards": true,
-      "high_contrast": true
-    }
+  "profile": {
+    "display_name": null,
+    "financial_mode": "personal",
+    "default_account_id": "acc_bbva",
+    "first_day_of_week": "monday"
   },
-  "dashboard": {
-    "period": {
-      "type": "monthly",
-      "month": null,
-      "year": null
-    },
-    "summary": {
-      "total_available": 0.0,
-      "total_spent": 0.0,
-      "total_income": 0.0,
-      "savings_progress_percent": 0.0
-    },
-    "widgets": [
-      "bbva_overview",
-      "santander_fixed_costs",
-      "savings_goal",
-      "spending_categories",
-      "recent_transactions",
-      "shopping_list"
-    ]
+  "current_period": {
+    "id": "2026-07",
+    "type": "calendar_month",
+    "year": 2026,
+    "month": 7,
+    "start_date": "2026-07-01",
+    "end_date": "2026-07-31",
+    "status": "open",
+    "opened_at": "2026-07-15T00:27:45+02:00",
+    "closed_at": null
   },
-  "accounts": {
-    "bbva": {
-      "id": "acc_bbva_main",
+  "accounts": [
+    {
+      "id": "acc_bbva",
       "name": "BBVA",
+      "type": "bank",
       "role": "daily_spending",
       "active": true,
-      "balance": 865.0,
-      "monthly_budget": 865.0,
-      "spent": 0.0,
-      "available": 865.0,
-      "budget_usage_percent": 0.0,
-      "categories": {
-        "alimentacion": {
-          "label": "Alimentación",
-          "budget": 250.0,
-          "spent": 0.0,
-          "available": 250.0,
-          "icon": "fork.knife"
-        },
-        "transporte": {
-          "label": "Transporte",
-          "budget": 100.0,
-          "spent": 0.0,
-          "available": 100.0,
-          "icon": "car.fill"
-        },
-        "ocio": {
-          "label": "Ocio",
-          "budget": 120.0,
-          "spent": 0.0,
-          "available": 120.0,
-          "icon": "gamecontroller.fill"
-        },
-        "compras": {
-          "label": "Compras",
-          "budget": 150.0,
-          "spent": 0.0,
-          "available": 150.0,
-          "icon": "bag.fill"
-        },
-        "salud": {
-          "label": "Salud",
-          "budget": 75.0,
-          "spent": 0.0,
-          "available": 75.0,
-          "icon": "cross.case.fill"
-        },
-        "otros": {
-          "label": "Otros",
-          "budget": 170.0,
-          "spent": 0.0,
-          "available": 170.0,
-          "icon": "ellipsis.circle.fill"
-        }
-      }
+      "current_balance": 865.0,
+      "monthly_income_reference": 865.0,
+      "include_in_total_balance": true,
+      "notes": null
     },
-    "santander": {
-      "id": "acc_santander_fixed",
+    {
+      "id": "acc_santander",
       "name": "Santander",
+      "type": "bank",
       "role": "fixed_expenses",
       "active": true,
-      "balance": 0.0,
-      "monthly_fixed_budget": 0.0,
-      "paid_total": 0.0,
-      "pending_total": 0.0,
-      "bills": {
-        "alquiler": {
-          "label": "Alquiler",
-          "amount": 450.0,
-          "due_day": 1,
-          "paid": false,
-          "paid_at": null,
-          "icon": "house.fill"
-        },
-        "internet": {
-          "label": "Internet",
-          "amount": 0.0,
-          "due_day": null,
-          "paid": false,
-          "paid_at": null,
-          "icon": "wifi"
-        },
-        "luz": {
-          "label": "Luz",
-          "amount": 0.0,
-          "due_day": null,
-          "paid": false,
-          "paid_at": null,
-          "icon": "bolt.fill"
-        },
-        "agua": {
-          "label": "Agua",
-          "amount": 0.0,
-          "due_day": null,
-          "paid": false,
-          "paid_at": null,
-          "icon": "drop.fill"
-        }
-      }
-    }
-  },
-  "savings": {
-    "id": "savings_main",
-    "name": "Meta de ahorro",
-    "current": 0.0,
-    "target": 1300.0,
-    "deadline": "2026-09-01",
-    "remaining": 1300.0,
-    "progress_percent": 0.0,
-    "monthly_required": 0.0,
-    "status": "in_progress"
-  },
-  "shopping_list": {
-    "active": true,
-    "estimated_total": 0.0,
-    "items": []
-  },
-  "transactions": [],
-  "automation": {
-    "apple_pay": {
-      "enabled": false,
-      "shortcut_name": "JARVIS REGISTRAR GASTO",
-      "default_account": "bbva",
-      "ask_for_amount": true,
-      "ask_for_category": true,
-      "ask_for_note": false
+      "current_balance": null,
+      "monthly_income_reference": null,
+      "include_in_total_balance": true,
+      "notes": null
     },
-    "rules": [
+    {
+      "id": "acc_savings",
+      "name": "Ahorros",
+      "type": "savings",
+      "role": "savings",
+      "active": false,
+      "current_balance": null,
+      "monthly_income_reference": null,
+      "include_in_total_balance": true,
+      "notes": null
+    }
+  ],
+  "budgets": {
+    "account_id": "acc_bbva",
+    "period_id": "2026-07",
+    "monthly_total": 865.0,
+    "allocation_mode": "flexible",
+    "unallocated_amount": 865.0,
+    "categories": [
       {
-        "merchant_contains": [
+        "id": "cat_food",
+        "name": "AlimentaciÃ³n",
+        "active": true,
+        "budget": null,
+        "subcategories": [
+          {
+            "id": "sub_supermarket",
+            "name": "Supermercado mensual",
+            "active": true,
+            "budget": null,
+            "weekly_split": {
+              "enabled": true,
+              "weeks": 4,
+              "weekly_budget": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "cat_transport",
+        "name": "Transporte",
+        "active": true,
+        "budget": null,
+        "subcategories": [
+          {
+            "id": "sub_taxi",
+            "name": "Taxis",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_public_transport",
+            "name": "Metro / Bus",
+            "active": true,
+            "budget": null
+          }
+        ]
+      },
+      {
+        "id": "cat_leisure",
+        "name": "Ocio",
+        "active": true,
+        "budget": null,
+        "subcategories": [
+          {
+            "id": "sub_restaurants",
+            "name": "Restaurantes",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_parties",
+            "name": "Fiestas",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_events",
+            "name": "Eventos",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_travel",
+            "name": "Viajes",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_dates",
+            "name": "Citas",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_cinema_theatre",
+            "name": "Cine / Teatro",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_entertainment",
+            "name": "Entretenimiento",
+            "active": true,
+            "budget": null
+          }
+        ]
+      },
+      {
+        "id": "cat_shopping",
+        "name": "Compras",
+        "active": true,
+        "budget": null,
+        "subcategories": [
+          {
+            "id": "sub_digital_purchases",
+            "name": "Digitales",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_clothes_accessories",
+            "name": "Ropa y accesorios",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_gifts",
+            "name": "Regalos",
+            "active": true,
+            "budget": null
+          }
+        ]
+      },
+      {
+        "id": "cat_health",
+        "name": "Salud",
+        "active": true,
+        "budget": null,
+        "subcategories": [
+          {
+            "id": "sub_insurance",
+            "name": "Seguro",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_medicines",
+            "name": "Medicinas",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_mengrooming",
+            "name": "MenGrooming",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_fitness",
+            "name": "Actividad fÃ­sica / Gimnasio / Deporte",
+            "active": true,
+            "budget": null
+          }
+        ]
+      },
+      {
+        "id": "cat_digital_subscriptions",
+        "name": "Suscripciones digitales",
+        "active": true,
+        "budget": null,
+        "subcategories": [
+          {
+            "id": "sub_streaming",
+            "name": "Plataformas de streaming",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_online_courses",
+            "name": "Cursos online",
+            "active": true,
+            "budget": null
+          },
+          {
+            "id": "sub_tools",
+            "name": "Herramientas",
+            "active": true,
+            "budget": null
+          }
+        ]
+      },
+      {
+        "id": "cat_other",
+        "name": "Otros",
+        "active": true,
+        "budget": null,
+        "subcategories": []
+      }
+    ]
+  },
+  "bills": {
+    "account_id": "acc_santander",
+    "period_id": "2026-07",
+    "items": [
+      {
+        "id": "bill_rent",
+        "name": "Alquiler piso",
+        "type": "housing",
+        "amount": null,
+        "due_day": null,
+        "active": true,
+        "paid": false,
+        "paid_at": null,
+        "auto_renew": true,
+        "notes": null
+      },
+      {
+        "id": "bill_internet",
+        "name": "Internet",
+        "type": "utilities",
+        "amount": null,
+        "due_day": null,
+        "active": true,
+        "paid": false,
+        "paid_at": null,
+        "auto_renew": true,
+        "notes": null
+      },
+      {
+        "id": "bill_electricity",
+        "name": "Luz",
+        "type": "utilities",
+        "amount": null,
+        "due_day": null,
+        "active": true,
+        "paid": false,
+        "paid_at": null,
+        "auto_renew": true,
+        "notes": null
+      },
+      {
+        "id": "bill_water",
+        "name": "Agua",
+        "type": "utilities",
+        "amount": null,
+        "due_day": null,
+        "active": true,
+        "paid": false,
+        "paid_at": null,
+        "auto_renew": true,
+        "notes": null
+      },
+      {
+        "id": "bill_phone_internet",
+        "name": "TelÃ©fono e internet",
+        "type": "communications",
+        "amount": null,
+        "due_day": null,
+        "active": true,
+        "paid": false,
+        "paid_at": null,
+        "auto_renew": true,
+        "notes": null
+      },
+      {
+        "id": "bill_other",
+        "name": "Otros",
+        "type": "other",
+        "amount": null,
+        "due_day": null,
+        "active": true,
+        "paid": false,
+        "paid_at": null,
+        "auto_renew": true,
+        "notes": null
+      }
+    ]
+  },
+  "savings_goals": [
+    {
+      "id": "goal_primary",
+      "name": "Meta principal",
+      "account_id": "acc_savings",
+      "active": false,
+      "current_amount": null,
+      "target_amount": null,
+      "deadline": null,
+      "created_at": "2026-07-15T00:27:45+02:00",
+      "completed_at": null,
+      "notes": null
+    }
+  ],
+  "shopping_lists": [
+    {
+      "id": "shopping_main",
+      "name": "Lista principal",
+      "active": true,
+      "estimated_total": 0.0,
+      "items": []
+    }
+  ],
+  "transactions": [],
+  "period_history": [],
+  "automation_rules": {
+    "merchant_category_rules": [
+      {
+        "id": "rule_supermarkets",
+        "match_type": "contains_any",
+        "merchant_terms": [
           "mercadona",
           "carrefour",
           "lidl",
-          "aldi"
+          "aldi",
+          "consum"
         ],
-        "category": "alimentacion"
+        "category_id": "cat_food",
+        "subcategory_id": "sub_supermarket",
+        "active": true
       },
       {
-        "merchant_contains": [
+        "id": "rule_taxi",
+        "match_type": "contains_any",
+        "merchant_terms": [
           "uber",
           "cabify",
-          "renfe",
-          "metro",
-          "repsol"
+          "taxi"
         ],
-        "category": "transporte"
+        "category_id": "cat_transport",
+        "subcategory_id": "sub_taxi",
+        "active": true
       },
       {
-        "merchant_contains": [
-          "zara",
-          "h&m",
-          "nike",
-          "adidas"
+        "id": "rule_public_transport",
+        "match_type": "contains_any",
+        "merchant_terms": [
+          "metro",
+          "renfe",
+          "emt",
+          "bus"
         ],
-        "category": "compras"
+        "category_id": "cat_transport",
+        "subcategory_id": "sub_public_transport",
+        "active": true
       }
-    ]
+    ],
+    "apple_pay": {
+      "enabled": false,
+      "shortcut_name": "JARVIS REGISTRAR GASTO",
+      "ask_for_amount": true,
+      "ask_for_category": true,
+      "ask_for_subcategory": true,
+      "ask_for_note": false
+    }
   },
-  "alerts": {
-    "budget_warning_percent": 80,
-    "budget_critical_percent": 95,
-    "savings_reminder_enabled": true,
-    "fixed_bill_reminder_enabled": true
+  "settings": {
+    "financial_period": {
+      "type": "calendar_month",
+      "start_day": 1,
+      "auto_close": false
+    },
+    "alerts": {
+      "budget_warning_percent": 80,
+      "budget_critical_percent": 95,
+      "bill_reminders_enabled": true,
+      "savings_reminders_enabled": true
+    },
+    "dashboard": {
+      "theme": "jarvis_dark_blue",
+      "show_recent_transactions": true,
+      "recent_transactions_limit": 5,
+      "show_shopping_list": true
+    },
+    "theme": {
+      "mode": "dark",
+      "colors": {
+        "background": "#020611",
+        "surface": "#07111F",
+        "surface_alt": "#0B1B2E",
+        "primary": "#00AEEF",
+        "primary_soft": "#68D5FF",
+        "text": "#FFFFFF",
+        "text_secondary": "#A9C7D9",
+        "border": "#12344D"
+      }
+    }
   },
   "system": {
-    "schema_version": 1,
-    "created_at": "2026-07-14T00:00:00+02:00",
-    "updated_at": "2026-07-14T00:00:00+02:00",
-    "data_integrity": {
-      "last_transaction_id": 0,
-      "last_sync_status": "not_synced",
-      "last_sync_message": null
+    "schema_version": 2,
+    "created_at": "2026-07-15T00:27:45+02:00",
+    "updated_at": "2026-07-15T00:27:45+02:00",
+    "last_transaction_id": 0,
+    "last_sync_status": "not_synced",
+    "last_sync_message": null,
+    "data_rules": {
+      "store_calculated_totals": false,
+      "preserve_closed_periods": true,
+      "allow_null_configuration_values": true
     }
   }
 }
