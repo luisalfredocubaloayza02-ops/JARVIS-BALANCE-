@@ -1,0 +1,25 @@
+{
+  "bbva": {
+    "limite_mensual": 865.00,
+    "disponible": 865.00,
+    "gastado": 0.00,
+    "categorias": {
+      "alimentacion": 0.00,
+      "ocio": 0.00,
+      "fijos": 0.00
+    }
+  },
+  "santander": {
+    "recibos": [
+      {"id": "alquiler", "nombre": "Alquiler / Renta", "precio": 450.00, "pagado": false},
+      {"id": "internet", "nombre": "Teléfono e Internet", "precio": 35.00, "pagado": false},
+      {"id": "luz", "nombre": "Luz (Mensual)", "precio": 0.00, "pagado": false, "variable": true},
+      {"id": "agua", "nombre": "Agua (Trimestral)", "precio": 0.00, "pagado": false, "variable": true}
+    ]
+  },
+  "ahorros": {
+    "total_acumulado": 0.00,
+    "meta_septiembre": 1500.00
+  },
+  "historial": []
+}
