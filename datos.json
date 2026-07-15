@@ -31,7 +31,7 @@
       "type": "bank",
       "role": "daily_spending",
       "active": true,
-      "current_balance": 862,
+      "current_balance": 857,
       "monthly_income_reference": 865,
       "include_in_total_balance": true,
       "notes": null
@@ -377,6 +377,20 @@
       "note": null,
       "date": "2026-07-15T15:16:46.923Z",
       "source": "shortcut"
+    },
+    {
+      "id": "tx_000008",
+      "sequence": 8,
+      "period_id": "2026-07",
+      "type": "expense",
+      "amount": 5,
+      "account_id": "acc_bbva",
+      "category_id": "cat_food",
+      "subcategory_id": "sub_supermarket",
+      "merchant": "Mercadona",
+      "note": null,
+      "date": "2026-07-15T15:18:30.850Z",
+      "source": "shortcut"
     }
   ],
   "period_history": [],
@@ -466,10 +480,10 @@
   "system": {
     "schema_version": 2,
     "created_at": "2026-07-15T00:27:45+02:00",
-    "updated_at": "2026-07-15T15:16:46.923Z",
-    "last_transaction_id": 7,
+    "updated_at": "2026-07-15T15:18:30.850Z",
+    "last_transaction_id": 8,
     "last_sync_status": "success",
-    "last_sync_message": "Gasto de 2.00 EUR registrado.",
+    "last_sync_message": "Gasto de 5.00 EUR registrado.",
     "data_rules": {
       "store_calculated_totals": false,
       "preserve_closed_periods": true,
