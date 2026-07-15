@@ -31,7 +31,7 @@
       "type": "bank",
       "role": "daily_spending",
       "active": true,
-      "current_balance": 861,
+      "current_balance": 860,
       "monthly_income_reference": 865,
       "include_in_total_balance": true,
       "notes": null
@@ -405,6 +405,20 @@
       "note": null,
       "date": "2026-07-15T14:25:12.439Z",
       "source": "shortcut"
+    },
+    {
+      "id": "tx_000005",
+      "sequence": 5,
+      "period_id": "2026-07",
+      "type": "expense",
+      "amount": 1,
+      "account_id": "acc_bbva",
+      "category_id": "cat_food",
+      "subcategory_id": "sub_supermarket",
+      "merchant": "D",
+      "note": null,
+      "date": "2026-07-15T14:38:46.243Z",
+      "source": "shortcut"
     }
   ],
   "period_history": [],
@@ -494,8 +508,8 @@
   "system": {
     "schema_version": 2,
     "created_at": "2026-07-15T00:27:45+02:00",
-    "updated_at": "2026-07-15T14:25:12.439Z",
-    "last_transaction_id": 4,
+    "updated_at": "2026-07-15T14:38:46.243Z",
+    "last_transaction_id": 5,
     "last_sync_status": "success",
     "last_sync_message": "Gasto de 1.00 EUR registrado.",
     "data_rules": {
