@@ -31,8 +31,8 @@
       "type": "bank",
       "role": "daily_spending",
       "active": true,
-      "current_balance": 865.0,
-      "monthly_income_reference": 865.0,
+      "current_balance": 865,
+      "monthly_income_reference": 865,
       "include_in_total_balance": true,
       "notes": null
     },
@@ -62,9 +62,9 @@
   "budgets": {
     "account_id": "acc_bbva",
     "period_id": "2026-07",
-    "monthly_total": 865.0,
+    "monthly_total": 865,
     "allocation_mode": "flexible",
-    "unallocated_amount": 865.0,
+    "unallocated_amount": 865,
     "categories": [
       {
         "id": "cat_food",
@@ -345,7 +345,7 @@
       "id": "shopping_main",
       "name": "Lista principal",
       "active": true,
-      "estimated_total": 0.0,
+      "estimated_total": 0,
       "items": []
     }
   ],
@@ -437,10 +437,10 @@
   "system": {
     "schema_version": 2,
     "created_at": "2026-07-15T00:27:45+02:00",
-    "updated_at": "2026-07-15T00:27:45+02:00",
+    "updated_at": "2026-07-15T11:32:53.994Z",
     "last_transaction_id": 0,
-    "last_sync_status": "not_synced",
-    "last_sync_message": null,
+    "last_sync_status": "success",
+    "last_sync_message": "Presupuesto mensual actualizado a 865.00 EUR.",
     "data_rules": {
       "store_calculated_totals": false,
       "preserve_closed_periods": true,
